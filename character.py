@@ -1,4 +1,3 @@
-# personagens
 class Personagem:
     def __init__(self, nome, ataque, defesa):
         self.nome = nome
@@ -23,7 +22,7 @@ print()
 print(f"Ataque {melhor_ataque.nome} {melhor_ataque.ataque}")
 print(f"Defesa {melhor_defesa.nome} {melhor_defesa.defesa}")
 
-# arrays
+
 print()
 for p in personagens:
     print(p.nome)
