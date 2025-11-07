@@ -1,13 +1,36 @@
-character1 = ("name", "ataque" , "defesa")
-character2 = ("name", "ataque" , "defesa")
-character3 = ("name", "ataque" , "defesa")
+# personagens
+class Personagem:
+    def __init__(self, nome, ataque, defesa):
+        self.nome = nome
+        self.ataque = ataque
+        self.defesa = defesa
 
-character1 = ("Raul", 5 , 15)
-character2 = ("Maria", 15 , 5)
-character3 = ("Carlos", 10 , 10)
 
-String = "[['" + str(character1[0]) + "', (" + str(character1[1]) + ", " + str(character1[2]) + ")], ['" + str(character2[0]) + "', (" + str(character2[1]) + ", " + str(character2[2]) + ")], ['" + str(character3[0]) + "', (" + str(character3[1]) + ", " + str(character3[2]) + ")]]"
+def criar_personagem(numero):
+    print(f"\nPersonagem {numero}:")
+    nome = input("Nome: ")
+    ataque = int(input("Ataque: "))
+    defesa = int(input("Defesa: "))
+    return Personagem(nome, ataque, defesa)
 
-print(String)
-print("Ataque Maria " + str(character2[1]))
-print("Defesa Raul " + str(character1[2]))
+
+personagens = [criar_personagem(i+1) for i in range(3)]
+
+
+maior_ataque = max(p.ataque for p in personagens)
+maior_defesa = max(p.defesa for p in personagens)
+
+
+melhor_ataque = next(p for p in personagens if p.ataque == maior_ataque)
+melhor_defesa = next(p for p in personagens if p.defesa == maior_defesa)
+
+print()
+print(f"Ataque {melhor_ataque.nome} {melhor_ataque.ataque}")
+print(f"Defesa {melhor_defesa.nome} {melhor_defesa.defesa}")
+
+# arrays
+print()
+for p in personagens:
+    print(p.nome)
+    print(p.ataque)
+    print(p.defesa)
