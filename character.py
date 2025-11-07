@@ -5,21 +5,16 @@ class Personagem:
         self.ataque = ataque
         self.defesa = defesa
 
-
-def criar_personagem(numero):
-    print(f"\nPersonagem {numero}:")
-    nome = input("Nome: ")
-    ataque = int(input("Ataque: "))
-    defesa = int(input("Defesa: "))
+def criar_personagem():
+    nome = input()
+    ataque = int(input())
+    defesa = int(input())
     return Personagem(nome, ataque, defesa)
 
-
-personagens = [criar_personagem(i+1) for i in range(3)]
-
+personagens = [criar_personagem() for _ in range(3)]
 
 maior_ataque = max(p.ataque for p in personagens)
 maior_defesa = max(p.defesa for p in personagens)
-
 
 melhor_ataque = next(p for p in personagens if p.ataque == maior_ataque)
 melhor_defesa = next(p for p in personagens if p.defesa == maior_defesa)
