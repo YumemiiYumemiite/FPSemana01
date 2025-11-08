@@ -15,7 +15,7 @@ personagens = [criar_personagem() for _ in range(3)]
 print()
 print([
     [personagens[0].nome, (personagens[0].ataque, personagens[0].defesa)],
-    [personagens[1].nome, (personagens[0].ataque, personagens[1].defesa)],
+    [personagens[1].nome, (personagens[1].ataque, personagens[1].defesa)],
     [personagens[2].nome, (personagens[2].ataque, personagens[2].defesa)]
 ])
 
